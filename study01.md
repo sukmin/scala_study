@@ -13,9 +13,9 @@ https://en.wikipedia.org/wiki/Martin_Odersky
 
 ### 도메인 특화 언어(DSL)이란?
 #### 새로운 타입을 키워가기
-
+내장 타입을 원래 있는 타입처럼 사용
 #### 새로운 제어 구조 키워가기
-
+액터 기반
 ### scala 로고의 의미는?
 ![](https://www.scala-lang.org/resources/img/smooth-spiral.png)
 
