@@ -12,7 +12,9 @@ https://en.wikipedia.org/wiki/Martin_Odersky
 또한 중의적으로 scala는 이탈리아어로 계단을 의미하는데 더 나은 프로그래밍 언어로 나아가는 계단 역할을 하는 의미도 있다고 한다.
 
 ### 도메인 특화 언어(DSL)이란?
+#### 새로운 타입을 키워가기
 
+#### 새로운 제어 구조 키워가기
 
 ### scala 로고의 의미는?
 ![](https://www.scala-lang.org/resources/img/smooth-spiral.png)
