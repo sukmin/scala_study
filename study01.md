@@ -9,10 +9,13 @@ https://en.wikipedia.org/wiki/Martin_Odersky
 ### scala이름의 의미는?
 스칼라는 확장 가능한(scalable) 언어라는 의미로 작명되었다.
 이 이름대로 scala를 확장해 도메인 특화 언어로 만들 수 있다.
+또한 중의적으로 scala는 이탈리아어로 계단을 의미하는데 더 나은 프로그래밍 언어로 나아가는 계단 역할을 하는 의미도 있다고 한다.
 
 ### 도메인 특화 언어(DSL)이란?
 
+
 ### scala 로고의 의미는?
+[https://www.scala-lang.org/resources/img/smooth-spiral.png]
 
 
 ### scala의 특징
