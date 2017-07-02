@@ -15,7 +15,7 @@ https://en.wikipedia.org/wiki/Martin_Odersky
 
 
 ### scala 로고의 의미는?
-[https://www.scala-lang.org/resources/img/smooth-spiral.png]
+![https://www.scala-lang.org/resources/img/smooth-spiral.png]
 
 
 ### scala의 특징
