@@ -18,6 +18,8 @@ https://en.wikipedia.org/wiki/Martin_Odersky
 ![](https://www.scala-lang.org/resources/img/smooth-spiral.png)
 scala의 계단이라는 의미와, 스위스 로잔 연방 공과대학교에 있는 나선형 계단을 의미
 
+![](http://www.scala-lang.org/old/sites/default/files/3957416434_65bffee1b6.jpg)
+
 ### scala의 특징
 
 ### scala의 주 용도
