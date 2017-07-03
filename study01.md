@@ -72,6 +72,14 @@ Scala code runner version 2.12.2 -- Copyright 2002-2017, LAMP/EPFL and Lightbend
 ```
 
 ### REPL
+읽고(Read), 평가하고(Evaluate), 출력하고(Print), 반복한다(Loop)
+```bash
+localhost:~ naver$ scala
+Welcome to Scala 2.12.2 (Java HotSpot(TM) 64-Bit Server VM, Java 1.8.0_45).
+Type in expressions for evaluation. Or try :help.
+
+scala>
+```
 
 ## Hello World
 
