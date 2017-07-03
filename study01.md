@@ -61,9 +61,12 @@ first class
 ## scala 개발 환경 설정
 ### 설치
 JDK8 설치
+
 Scala 설치 2.12.2 : https://www.scala-lang.org/download/
+
 PATH 잡기
-```설치테스트
+
+```bash
 localhost:~ naver$ scala -version
 Scala code runner version 2.12.2 -- Copyright 2002-2017, LAMP/EPFL and Lightbend, Inc.
 ```
