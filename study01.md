@@ -82,7 +82,12 @@ scala>
 ```
 
 ## Hello World
+```scala
+scala> println("Hello, World")
+Hello, World
 
+scala>
+```
 
 ## 참고
 https://en.wikipedia.org/wiki/Martin_Odersky
