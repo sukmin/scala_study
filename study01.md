@@ -153,8 +153,51 @@ object Main {
 }
 ```
 
+#### 이런 상황에서는?
+
+```scala
+package io.umon.scala
+
+object Main {
+  def main(args: Array[String]): Unit = {
+
+    var a = "한조";
+    val b = a;
+    println(a)
+    a = "겐지";
+    println(a)
+    println(b)
+
+  }
+}
+
+```
+
+```scala
+package io.umon.scala
+
+case class Food(var name: String, var price: Int)
+
+object Main {
+
+  def main(args: Array[String]): Unit = {
+
+    var coffee = Food("커피", 3000)
+    val copyCoffee = coffee
+    println(coffee)
+    copyCoffee.price = 2000
+    println(coffee)
+    println(copyCoffee)
+
+  }
+}
+
+
+```
+
 ### 자료형
 모든 것은 객체.
+
 일단 자바의 프리미티브 래퍼 클래스는 다 있다.(Integer의 경우에만 Int)
 
 ## 조건문
