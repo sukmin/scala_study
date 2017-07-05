@@ -103,6 +103,7 @@ object Main {
 
 ## 변수
 ### var
+variable
 ```scala
 package io.umon.scala
 
@@ -121,10 +122,36 @@ object Main {
     println(s"${anotherHello} , ${anotherNumber}")
   }
 }
-
 ```
 
 ### val
+value
+```scala
+package io.umon.scala
+
+object Main {
+  def main(args: Array[String]): Unit = {
+
+    val document =
+"""안녕
+ㅡㅡ
+아오
+아오아오아오
+ㅠㅠ
+"""
+    println(document)
+
+    val anotherDocument =
+      """안녕
+        |ㅡㅡ
+        |아오
+        |아오아오아오
+        |ㅠㅠ
+      """.stripMargin
+    println(anotherDocument)
+  }
+}
+```
 
 ## 조건문
 
