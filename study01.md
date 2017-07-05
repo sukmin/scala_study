@@ -102,6 +102,29 @@ object Main {
 ```
 
 ## 변수
+### var
+```scala
+package io.umon.scala
+
+object Main {
+  def main(args: Array[String]): Unit = {
+    var hello: String = "안녕"
+    var number: Int = 1
+    println(hello + " , " + number)
+
+    hello = "배고파"
+    number = 2
+    println(s"${hello} , ${number}")
+
+    var anotherHello = "하이"
+    var anotherNumber = 9999
+    println(s"${anotherHello} , ${anotherNumber}")
+  }
+}
+
+```
+
+### val
 
 ## 조건문
 
