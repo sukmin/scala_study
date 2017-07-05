@@ -200,6 +200,8 @@ object Main {
 
 일단 자바의 프리미티브 래퍼 클래스는 다 있다.(Integer의 경우에만 Int)
 
+![](https://www.scala-exercises.org/assets/scala_tutorial/scala_type_hierarchy.png)
+
 ## 조건문
 
 ## 반복문
