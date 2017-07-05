@@ -81,13 +81,31 @@ Type in expressions for evaluation. Or try :help.
 scala>
 ```
 
-## Hello World
+## Hello World(REPL)
 ```scala
 scala> println("Hello, World")
 Hello, World
 
 scala>
 ```
+
+## Hello World(인텔리j에서)
+```scala
+package io.umon.scala
+
+object Main {
+  def main(args: Array[String]): Unit = {
+    print("안녕!!")
+  }
+}
+
+```
+
+## 변수
+
+## 조건문
+
+## 반복문
 
 ## 참고
 https://en.wikipedia.org/wiki/Martin_Odersky
