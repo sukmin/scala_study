@@ -651,7 +651,10 @@ object Main {
 
 ```
 
-### apply(), implict는 다음시간에 ....
+### apply
+
+### implict (암시적인, 암묵적인)
+
 
 ## 참고
 https://en.wikipedia.org/wiki/Martin_Odersky
