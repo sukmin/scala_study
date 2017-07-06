@@ -292,7 +292,67 @@ while((line = readLine()) != "") {
 - 스칼라는 루프문을 싫어함. 함수형언어에서는 문제를 재귀로 해결하지 루프로 해결하지 않기 때문에
 
 ### for표현식
+- 다양한 방식으로 활용 가능
+```scala
+package io.umon.scala
 
+object Main {
+
+  def main(args: Array[String]): Unit = {
+
+    // 컬렉션 이터레이션
+    var arr = Array(101, 202, 303, 404)
+    for (num <- arr) {
+      println(num);
+    }
+
+    for (i <- 0 to 4) {
+      println(i)
+    }
+
+    for (i <- 0 until 4) {
+      println(i)
+    }
+
+    // 필터링
+    for (num <- arr if num % 2 == 0 if num != 202) {
+      println(num)
+    }
+
+    for (num <- arr if num % 2 == 0) {
+      println(num)
+    }
+
+    // 중첩 이터레이션
+    for (i <- 0 to 3) {
+      for (j <- 0 to 3) {
+        println(i + " : " + j)
+      }
+    }
+
+    for (i <- 0 to 3; j <- 0 to 3) {
+      println(i + " : " + j)
+    }
+
+    for {i <- 0 to 3; j <- 0 to 3} {
+      println(i + " : " + j)
+    }
+
+    // for 절 yield 본문
+    val iResult = for (i <- 0 to 3) yield {
+      i
+    }
+    println(iResult)
+
+    // by
+    for (i <- 0 to 400 by 100) {
+      println(i)
+    }
+
+  }
+}
+
+```
 
 ## 참고
 https://en.wikipedia.org/wiki/Martin_Odersky
