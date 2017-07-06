@@ -202,7 +202,47 @@ object Main {
 
 ![](https://www.scala-exercises.org/assets/scala_tutorial/scala_type_hierarchy.png)
 
+- 최상위 클래스 Any ( http://www.scala-lang.org/api/2.7.2/scala/Any.html )
+
+#### AnyVal
+- 값 클래스의 조상
+- 리터럴로 생성 가능
+- new 키워드로 생성 불가
+- 값 클래스끼리는 평등. 이게 무슨 말이냐면 
+
+#### AnyRef
+- 참조 클래스의 조상
+- Java의 Object와 동일하다고 생각하면 일단 OK!
+
+#### 스코프
+- 자바와 거의 같다고 보면 되는데,,
+- 바깥 스코프에 있는 변수와 같은 이름을 다시 선언 가능하는건 차이점
+```scala
+package io.umon.scala
+
+case class Food(var name: String, var price: Int)
+
+object Main {
+
+  def main(args: Array[String]): Unit = {
+
+    val a = 1;
+      {
+        val a = 2;
+        println(a);
+      }
+    println(a);
+
+  }
+}
+
+
+
+```
+
 ## 조건문
+- if 잘 아시죠? 우리가 아는 그 if..
+- 
 
 ## 반복문
 
