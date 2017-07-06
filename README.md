@@ -651,6 +651,8 @@ object Main {
 
 ```
 
+### apply(), implict는 다음시간에 ....
+
 ## 참고
 https://en.wikipedia.org/wiki/Martin_Odersky
 https://namu.wiki/w/Scala
