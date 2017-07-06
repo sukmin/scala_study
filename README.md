@@ -493,6 +493,41 @@ object Main {
 
 ```
 
+```scala
+package io.umon.scala
+
+
+trait Weapon{
+  def shoot = "뿅뿅"
+}
+
+trait M16 extends Weapon{
+  override def shoot = "빵야"
+}
+
+trait Bazooka  extends Weapon {
+  override def shoot = "뿌왕뿌왕"
+}
+
+trait Daepodong  extends Weapon {
+  override def shoot = super.shoot + "콰르르르릉"
+}
+
+class Robot extends Weapon with M16 with Bazooka with Daepodong
+
+object Main {
+
+  def main(args: Array[String]): Unit = {
+
+    val roooobot = new Robot
+    println(roooobot.shoot)
+  }
+}
+
+
+
+```
+
 ## 참고
 https://en.wikipedia.org/wiki/Martin_Odersky
 https://namu.wiki/w/Scala
