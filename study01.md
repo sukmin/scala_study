@@ -239,8 +239,11 @@ object Main {
 
 
 ```
+## 내장제어구문
+- scala는 뭔가 값을 내려주는 것을 좋아함.
+- 프로그램 전체를 값을 계산하는 관점에서 바라보고 프로그램 구성 요소 또한 값을 도출해야한다는 함수 언어적 접근을 채용한 결과
 
-## 조건문
+### if문
 - if 잘 아시죠? 우리가 아는 그 if..
 - scala의 if표현식은 값을 리턴
 ```scala
@@ -275,11 +278,21 @@ object Main {
   }
 }
 
-
-
 ```
 
-## 반복문
+### while문
+- while 잘 아시죠? 우리가 아는 그 while..
+- 주의해야할 것. Java는 할당의 결과는 할당한 값이지만, scala는 Unit값인 ()다. 즉 아래 코드는 무한루프.
+```scala
+var line = ""
+while((line = readLine()) != "") {
+  println("Read: " + line)
+}
+```
+- 스칼라는 루프문을 싫어함. 함수형언어에서는 문제를 재귀로 해결하지 루프로 해결하지 않기 때문에
+
+### for표현식
+
 
 ## 참고
 https://en.wikipedia.org/wiki/Martin_Odersky
