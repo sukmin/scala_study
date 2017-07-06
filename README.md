@@ -652,9 +652,82 @@ object Main {
 ```
 
 ### apply
+```scala
+package io.umon.scala
+
+
+class SomeClass {
+
+  def apply(i: Int) = println(i)
+
+}
+
+object Main {
+
+  def main(args: Array[String]): Unit = {
+    val some = new SomeClass
+    some(333)
+  }
+
+}
+
+```
 
 ### implict (암시적인, 암묵적인)
+```scala
+package io.umon.scala
 
+
+class Dog(dogName: String) {
+  val name = dogName + " 왈왈!"
+}
+
+
+
+object Main {
+
+  def main(args: Array[String]): Unit = {
+
+
+    val test = "밤비"
+    println(convert(test).name)
+
+  }
+
+  def convert(dogName: String): Dog = {
+    new Dog(dogName)
+  }
+
+}
+
+```
+
+```scala
+package io.umon.scala
+
+
+class Dog(dogName: String) {
+  val name = dogName + " 왈왈!"
+}
+
+
+
+object Main {
+
+  def main(args: Array[String]): Unit = {
+
+
+    val test = "밤비"
+    println(test.name)
+
+  }
+
+implicit def convert(dogName: String): Dog = {
+    new Dog(dogName)
+  }
+
+}
+```
 
 ## 참고
 https://en.wikipedia.org/wiki/Martin_Odersky
