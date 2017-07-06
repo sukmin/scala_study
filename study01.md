@@ -242,7 +242,42 @@ object Main {
 
 ## 조건문
 - if 잘 아시죠? 우리가 아는 그 if..
-- 
+- scala의 if표현식은 값을 리턴
+```scala
+package io.umon.scala
+
+case class Food(var name: String, var price: Int)
+
+object Main {
+
+  def main(args: Array[String]): Unit = {
+
+    println(if (1 == 1) {
+      "안녕"
+    });
+
+    var fileName = "default.txt"
+    if (!args.isEmpty) {
+      fileName = args(0)
+    }
+    println(fileName)
+
+    val anotherFileName = if (1 == 2) {
+      "1==2.txt"
+    } else if (args.isEmpty) {
+      "isEmpty.txt"
+    } else {
+      args(0)
+    }
+    println(anotherFileName)
+
+
+  }
+}
+
+
+
+```
 
 ## 반복문
 
