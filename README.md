@@ -446,6 +446,11 @@ object Main {
 
 ```
 
+## 트레이트
+- Java의 인터페이스에 대응
+- 변수 추가 가능
+- 로직 추가 가능
+
 ## 참고
 https://en.wikipedia.org/wiki/Martin_Odersky
 https://namu.wiki/w/Scala
