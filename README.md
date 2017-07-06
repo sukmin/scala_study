@@ -528,7 +528,35 @@ object Main {
 
 ## 함수 
 - 병렬처리를 위해 
-- f(x) = y  이게 
+- f(x) = y  이게 안되서 오류 찾기 너무 어려운거다. 
+```scala
+package io.umon.scala
+
+object Main {
+
+  def main(args: Array[String]): Unit = {
+    println(sum(1, 2))
+    println(minus(1, 2))
+    println("start :" + isVoid() + ": end")
+  }
+
+  def sum(a: Int, b: Int): Int = {
+    a + b
+  }
+
+  def minus(a: Int, b: Int) = {
+    a - b
+  }
+
+  def isVoid(): Unit = {
+    println("isVoid")
+  }
+
+}
+
+
+
+```
 
 ## 참고
 https://en.wikipedia.org/wiki/Martin_Odersky
