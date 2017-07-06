@@ -632,6 +632,25 @@ object Main {
 
 ```
 
+### 디폴트값
+```scala
+package io.umon.scala
+
+object Main {
+
+  def main(args: Array[String]): Unit = {
+    println(myFunction())
+    println(myFunction(1,2))
+  }
+
+  def myFunction(a: Int = 4, b: Int = 5): Int = a + b
+
+}
+
+
+
+```
+
 ## 참고
 https://en.wikipedia.org/wiki/Martin_Odersky
 https://namu.wiki/w/Scala
