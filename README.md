@@ -524,9 +524,11 @@ object Main {
   }
 }
 
-
-
 ```
+
+## 함수 
+- 병렬처리를 위해 
+- f(x) = y  이게 
 
 ## 참고
 https://en.wikipedia.org/wiki/Martin_Odersky
