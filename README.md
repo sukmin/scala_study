@@ -558,6 +558,56 @@ object Main {
 
 ```
 
+```scala
+package io.umon.scala
+
+object Main {
+
+  def main(args: Array[String]): Unit = {
+    dropship(people(5))
+  }
+
+  def people(n: Int): Int = {
+    println("탑승수속을 시작합니다")
+    n
+  }
+
+  def dropship(n: Int) = {
+    println("드랍쉽 준비합니다.")
+    println(n + "명 탑승 완료")
+  }
+
+
+}
+```
+```scala
+package io.umon.scala
+
+object Main {
+
+  def main(args: Array[String]): Unit = {
+    dropship(people(5))
+  }
+
+  def people(n: Int): Int = {
+    println("탑승수속을 시작합니다")
+    n
+  }
+
+  def dropship(n: => Int) = {
+    println("드랍쉽 준비합니다.")
+    println(n + "명 탑승 완료")
+  }
+
+
+}
+
+
+
+```
+
+
+
 ## 참고
 https://en.wikipedia.org/wiki/Martin_Odersky
 https://namu.wiki/w/Scala
