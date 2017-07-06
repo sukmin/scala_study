@@ -558,6 +558,8 @@ object Main {
 
 ```
 
+### call by name 
+
 ```scala
 package io.umon.scala
 
