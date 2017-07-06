@@ -388,6 +388,39 @@ object Main {
 
 ```
 
+## 클래스
+```scala
+package io.umon.scala
+
+
+class User(userName: String) {
+  var age = 20
+  var sex = 'M'
+  val name = userName
+}
+
+object Gasan {
+  def state(): String = {
+    "안녕"
+  }
+}
+
+object Main {
+
+  def main(args: Array[String]): Unit = {
+
+    val aUser = new User("aUser")
+    println(aUser.name)
+
+    println(Gasan state)
+
+  }
+}
+
+
+
+```
+
 ## 참고
 https://en.wikipedia.org/wiki/Martin_Odersky
 https://namu.wiki/w/Scala
