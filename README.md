@@ -608,7 +608,29 @@ object Main {
 
 ```
 
+```scala
+package io.umon.scala
 
+object Main {
+
+  def main(args: Array[String]): Unit = {
+    val g1 = f _
+    println(g1(3))
+
+    val g2: (Int => Int) = f
+    println(g2(3))
+
+    val g3 = (i: Int) => i
+    println(g3(3))
+  }
+
+  def f(i: Int): Int = i
+
+}
+
+
+
+```
 
 ## 참고
 https://en.wikipedia.org/wiki/Martin_Odersky
