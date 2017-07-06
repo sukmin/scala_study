@@ -417,7 +417,33 @@ object Main {
   }
 }
 
+```
 
+## 상속
+```scala
+package io.umon.scala
+
+
+class Duck(duckName: String) {
+  val sayName = duckName
+}
+
+class FireDuck(duckName: String, age: Int) extends Duck(duckName){
+  val sayAge = age
+}
+
+
+
+object Main {
+
+  def main(args: Array[String]): Unit = {
+
+    val testDuck = new FireDuck("testDuck",30)
+    println(testDuck.sayAge)
+    println(testDuck.sayName)
+
+  }
+}
 
 ```
 
