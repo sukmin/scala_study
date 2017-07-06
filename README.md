@@ -451,6 +451,47 @@ object Main {
 - Java의 인터페이스에 대응
 - 변수 추가 가능
 - 로직 추가 가능
+```scala
+package io.umon.scala
+
+
+trait Swimming {
+  def swim = println("수영합니다.")
+}
+
+trait Flying {
+  def fly = println("납니다.")
+}
+
+trait Running {
+  def run = println("달립니다.")
+}
+
+//미구현
+trait Eating {
+  def eat
+}
+
+class Animal extends Flying with Swimming
+
+class Pig extends Eating with Running{
+  override def eat: Unit = println("쩝쩝")
+}
+
+object Main {
+
+  def main(args: Array[String]): Unit = {
+
+    val myAnimal = new Animal
+    myAnimal.swim
+    myAnimal.fly
+
+    val myPig = new Pig
+    myPig.eat
+  }
+}
+
+```
 
 ## 참고
 https://en.wikipedia.org/wiki/Martin_Odersky
