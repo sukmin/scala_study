@@ -354,6 +354,39 @@ object Main {
 
 ```
 
+### match
+- switch case보다 조금 더 진화한 것
+- continue break는 기본적으로 없음
+```scala
+package io.umon.scala
+
+object Main {
+
+  def main(args: Array[String]): Unit = {
+
+    val currnetLocation = "가산"
+    currnetLocation match {
+      case "가산" => println("좋아")
+      case "서현" => println("싫어")
+      case _ => println("퇴사")
+    }
+
+
+    val anotherLocation = currnetLocation match {
+      case "가산" => "좋아"
+      case "서현" => "싫어"
+      case _ => "퇴사"
+    }
+    println(anotherLocation)
+
+
+  }
+}
+
+
+
+```
+
 ## 참고
 https://en.wikipedia.org/wiki/Martin_Odersky
 https://namu.wiki/w/Scala
