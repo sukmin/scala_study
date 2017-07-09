@@ -397,6 +397,14 @@ object Main {
 ```
 
 ## 클래스
+- 객체에 대한 청사진
+- 멤버(필드, 메소드)를 가진다.
+- 필드에 private를 붙이면 외부에서 접근 불가능.(자바와 다르게 기본으로 public)
+- 메소드에 전달되는 파라미터는 val이다.
+- 메소드를 한 값을 계산하는 표현식인 것처럼 생각해야 한다. 계산한 값이 바로 메소드의 리턴값.(이러한 철학을 가지면 메소드를 작은 규모로 유지할 수 있음)
+- 메소드를 정의할때 타입추론에 의해 굳이 반환타입을 안남겨도 되는데, 그러면 메소드를 사용하는 사람도 머릿속으로 타입추론을 해야하기에 이왕이면 타입을 남겨주자.
+- 메소드 vs 프로시저. 프로시저는 결과타입이 Unit인 메소드로 부수효과를 위해 실행. 부수효과는 메소드 밖에 있는 상태를 변경하거나, IO를 하거나...
+
 ```scala
 package io.umon.scala
 
@@ -426,6 +434,9 @@ object Main {
 }
 
 ```
+
+## 싱글톤 객체
+
 
 ## 상속
 ```scala
@@ -740,4 +751,9 @@ implicit def convert(dogName: String): Dog = {
 
 ## 참고
 https://en.wikipedia.org/wiki/Martin_Odersky
+
 https://namu.wiki/w/Scala
+
+http://www.yes24.com/24/goods/33054166?scode=032&OzSrank=2
+
+http://www.yes24.com/24/goods/39410825?scode=032&OzSrank=1
