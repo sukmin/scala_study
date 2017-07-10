@@ -749,6 +749,45 @@ implicit def convert(dogName: String): Dog = {
 }
 ```
 
+## 함수형 프로그래밍
+
+### 부수효과
+- 변수를 수정한다
+- 자료구조를 제자리에서 수정한다.
+- 객체의 필드를 설정한다.
+- 예외를 던지거나 오류를 내면서 실행을 중단한다.
+- 콘솔에 출력하거나 사용자의 입력을 읽어들인다.
+- 파일에 기록하거나 파일에서 읽어들인다.
+- 화면에 그린다.
+
+### 코드 변신 1단계
+```scala
+class Coffee {
+  var price: Int = 1000
+}
+
+class CreditCard {
+  def charge(price: Int): Unit = {
+    //TODO 뭔가 함
+  }
+}
+
+class Cafe {
+
+  def buyCoffee(cc: CreditCard): Coffee = {
+    val cup = new Coffee()
+
+    // 이 부분이 바로 부수효과!
+    // 네크워크를 통해 신용카드 회사와 접촉해 거래를 승인하고, 대금을 청구하고, 거래 기록을 영구적으로 기록하는 역할 등을 한다.
+    // 부수효과가 있기 때문에 테스트도 어렵다.
+    cc.charge(cup.price)
+
+    cup
+  }
+
+}
+```
+
 ## 참고
 https://en.wikipedia.org/wiki/Martin_Odersky
 
