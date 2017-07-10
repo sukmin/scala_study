@@ -820,6 +820,62 @@ class Cafe {
 }
 ```
 
+### 코드변신 3단계
+```scala
+class Coffee {
+  var price: Int = 1000
+}
+
+class CreditCard {
+}
+
+class Payments {
+  def charge(c: Charge): Unit = {
+    //
+  }
+}
+
+case class Charge(cc: CreditCard, price: Int) {
+  //여러 주문건을 하나로 합치기 위한 함수
+  def combine(other: Charge): Charge = {
+    if (cc == other.cc) {
+      Charge(cc, price + other.price)
+    } else {
+      throw new Exception("다른 카드로 주문을 합칠 수 없다.")
+    }
+  }
+}
+
+// Cafe는 실제 청구로직인 Payments를 구현하지 않아도 테스트가 가능해졌다.
+class Cafe {
+
+  def buyCoffee(cc: CreditCard): (Coffee, Charge) = {
+    val cup = new Coffee()
+    // coffee뿐만 아니라 하나의 청구건도 하나의 값으로 돌려주게 수정하였다.
+    // 청구 금액을 신용카드 회사에 보내고 결과를 기록하는 등의 처리는 외부의 다른 어딘가에서 해결하도록(책임지도록) 한다.
+    // 청구 건의 생성문제가 청구건의 처리(연동)과 분리 되었다.
+    // 이제 여러 주문건을 취합하기도 좋아졌다.
+    (cup, Charge(cc, cup.price))
+  }
+
+  def buyCoffees(cc: CreditCard, n: Int): (List[Coffee], Charge) = {
+    // List.fill(n)(x)는 x의 복사본 n개로 이루어진 List를 생성
+    val purchases: List[(Coffee, Charge)] = List.fill(n)(buyCoffee(cc))
+
+    // unzip은 튜플을 건건히 해체한다.
+    val (coffees, charges) = purchases.unzip
+
+    // 여러건의 주문을 리듀스한다
+    (coffees, charges.reduce((c1, c2) => c1.combine(c2)))
+  }
+
+  // 카드별로 주문을 합쳐준다.
+  def coalesce(charges: List[Charge]): List[Charge] =
+    charges.groupBy(_.cc).values.map(_.reduce(_ combine _)).toList
+
+}
+```
+
 ## 참고
 https://en.wikipedia.org/wiki/Martin_Odersky
 
