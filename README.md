@@ -788,6 +788,38 @@ class Cafe {
 }
 ```
 
+### 코드 변신 2단계
+```scala
+class Coffee {
+  var price: Int = 1000
+}
+
+class CreditCard {
+}
+
+class Payments {
+  def charge(cc:CreditCard, price: Int): Unit = {
+    //TODO 신용카드 정보를 읽고, 차감하고, 그걸 또 로깅하고...
+  }
+}
+
+class Cafe {
+
+  def buyCoffee(cc: CreditCard, p: Payments): Coffee = {
+    val cup = new Coffee()
+
+    // 여전히 부수효과가 발생하지만..
+    // CreditCard 어울리지 않는 로직들을 Payments로 옮겼다.
+    // Payments를 인터페이스라고 생각하면 목처리를 해서 테스트는 좀 더 쉬워진다.
+    // 만약 커피 12잔을 주문한다고 한다면, buyCoffee를 12번 호출해야하는데, 뭔가 비효율적으로 보인다.
+    p.charge(cc, cup.price)
+
+    cup
+  }
+
+}
+```
+
 ## 참고
 https://en.wikipedia.org/wiki/Martin_Odersky
 
