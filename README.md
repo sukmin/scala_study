@@ -977,10 +977,50 @@ object Main {
 }
 
 ```
+## 함수 컴비네이터
+- java8에 익숙한 분들은 쉽다능
+```scala
+package io.umon.scala
 
-### 시퀀스
+object Main {
 
-### 이터레이터
+  def main(args: Array[String]): Unit = {
+
+    var number = List(1, 2, 3, 4)
+
+    println(number.map(_ * 10))
+    println(number.map(a => a * 10))
+
+    // 부수 효과 작업
+    number.foreach(a => println(a))
+
+    println(number.filter(_ % 2 == 0))
+    println(number.filterNot(_ % 2 == 0))
+
+    println(number.foldLeft(0)((i, j) => i + j))
+    println(number.foldRight(0)((i, j) => i + j))
+
+    println(number.partition(_ % 2 == 0))
+
+    var anotherNumber = List(5, 6, 7, 8)
+    println(number.zip(anotherNumber))
+    println(number.zip(anotherNumber).unzip)
+
+    println(number.find(_ == 2))
+
+    println(number.drop(2))
+
+    println(number.dropWhile( a => a <= 3))
+
+    var otherNumber = List(number, anotherNumber)
+    println(otherNumber)
+    println(otherNumber.flatten)
+
+  }
+}
+
+```
+
 
 ## 함수형 프로그래밍
 
