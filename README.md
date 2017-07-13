@@ -1038,6 +1038,28 @@ object Main {
 
 ```
 
+### 아이더(either)
+```scala
+package io.umon.scala
+
+object Main {
+
+  def main(args: Array[String]): Unit = {
+
+    var input = scala.io.StdIn.readLine()
+
+    val result: Either[String, Int] = try {
+      Right(input.toInt)
+    } catch {
+      case e: Exception => Left(input)
+    }
+    println(result.getClass)
+
+  }
+}
+
+```
+
 ## 함수형 프로그래밍
 
 ### 부수효과
