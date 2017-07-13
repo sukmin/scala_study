@@ -893,6 +893,39 @@ object Main {
 
 ```
 
+### 집합(Set)
+```scala
+package io.umon.scala
+
+object Main {
+
+  def main(args: Array[String]): Unit = {
+
+    // new를 써서 만들지 않는다.
+    var withGod = Set(
+      "진기한",
+      "김자홍",
+      "강림도령"
+    )
+    println(withGod)
+
+    withGod += "염라대왕"
+    println(withGod)
+
+    withGod -= "강림도령"
+    println(withGod)
+
+    println(withGod("염라대왕"))
+    println(withGod("강림도령"))
+
+ }
+}
+
+```
+
+### 튜플
+
+
 ## 함수형 프로그래밍
 
 ### 부수효과
