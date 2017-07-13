@@ -857,6 +857,42 @@ object Main {
 
 ```
 
+### 맵
+```scala
+package io.umon.scala
+
+object Main {
+
+  def main(args: Array[String]): Unit = {
+
+    // new를 써서 만들지 않는다.
+    val map1 = Map()
+
+    //val map2[String, Int] = Map()
+
+    var map3 = Map(
+      "멍멍" -> "개",
+      "냐옹" -> "고양이",
+      "꿀꿀" -> "돼지"
+    )
+    println(map3("멍멍"))
+    println(map3.keys)
+    println(map3.values)
+    println(map3.isEmpty)
+
+    map3 += ("멍멍" -> "강아지")
+    println(map3("멍멍"))
+    println(map3.get("멍멍"))
+
+    map3 -= "멍멍"
+    //println(map3("멍멍"))
+    println(map3.get("멍멍"))
+
+  }
+}
+
+```
+
 ## 함수형 프로그래밍
 
 ### 부수효과
