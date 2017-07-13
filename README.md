@@ -1020,7 +1020,23 @@ object Main {
 }
 
 ```
+## 기타
+### 사용자 입력
+```scala
+package io.umon.scala
 
+object Main {
+
+  def main(args: Array[String]): Unit = {
+
+      println("값을 입력하세요.")
+      var a = scala.io.StdIn.readLine()
+      println("입력한 값은 " + a)
+
+  }
+}
+
+```
 
 ## 함수형 프로그래밍
 
