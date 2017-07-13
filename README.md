@@ -752,7 +752,110 @@ implicit def convert(dogName: String): Dog = {
 ## 컬렉션
 
 ### 배열
+```scala
+package io.umon.scala
 
+object Main {
+
+  def main(args: Array[String]): Unit = {
+
+    var array1: Array[Int] = new Array[Int](10)
+    var array2 = new Array[Int](10)
+
+    // apply에 대해 입을 털고...
+    var array3 = Array(555, 777)
+    println(array3(0));
+
+    for (x <- array3) {
+      println(x)
+    }
+
+    var array4 = Array(
+      Array(1, 2, 3),
+      Array(4, 5, 6),
+      Array(7, 8, 9)
+    )
+    println(array4(2)(0))
+
+    var array5 = Array(3.14, "한조", "겐지", 256)
+    for (x <- array5) {
+      println(x)
+    }
+
+  }
+}
+
+```
+
+### 리스트
+```scala
+package io.umon.scala
+
+object Main {
+
+  def main(args: Array[String]): Unit = {
+
+    // new를 써서 만들지 않는다.
+    var list1 = List()
+
+    var list2: List[String] = List("Z", "B", "C", "A");
+    println(list2(2))
+
+    var list3 = List(99, 999, 999)
+    println(list3(1))
+
+    var list4 = List("aa", 999, 3.4444)
+
+    var list5 = "멍" :: "멍멍" :: "멍멍멍" :: Nil
+    println(list5)
+
+    println("concat")
+    println("list2 ++ list3")
+    var list6 = list2 ++ list3
+    println(list6)
+
+    println("concat")
+    println("list2 ::: list3")
+    var list7 = list2 ::: list3
+    println(list7)
+
+    println("reverse")
+    println(list7.reverse)
+
+    println("max")
+    println(list3)
+    println(list3.max)
+
+    println("min")
+    println(list3)
+    println(list3.min)
+
+    println("sum")
+    println(list3)
+    println(list3.sum)
+
+    println("mkString")
+    println(list7.mkString(";;;;;;"))
+
+    println("exists")
+    println(list3.exists(a => a > 3))
+    println(list3.exists(_ > 3))
+
+    println("contains")
+    println(list3.contains(999))
+
+    println("isEmpty")
+    println(list3.isEmpty)
+
+    println("distinct")
+    var list8 = list4 ++ list7
+    println(list8)
+    println(list8.distinct)
+
+  }
+}
+
+```
 
 ## 함수형 프로그래밍
 
