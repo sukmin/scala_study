@@ -949,6 +949,38 @@ object Main {
 
 ```
 
+### 옵션
+- Some, None 두 종류가 있음
+```scala
+package io.umon.scala
+
+object Main {
+
+  def main(args: Array[String]): Unit = {
+
+    var animal = Map(
+      1 -> "멍멍이",
+      2 -> "냐옹이",
+      3 -> "꿀꿀이"
+    )
+
+    val one = animal.get(1)
+    val two = animal.get(2)
+    val four = animal.get(4)
+
+    println(one)
+    println(two)
+    println(one.get)
+    println(four.getOrElse("값이 없다"))
+
+ }
+}
+
+```
+
+### 시퀀스
+
+### 이터레이터
 
 ## 함수형 프로그래밍
 
