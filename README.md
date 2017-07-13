@@ -924,6 +924,30 @@ object Main {
 ```
 
 ### 튜플
+- 데이터 묶음
+- 뭔가 의미있는 데이터를 묶기 위함.
+- 어떤 함수에 리턴값을 여러개 넘겨주고 싶은 경우 튜플을 이용
+```scala
+package io.umon.scala
+
+object Main {
+
+  def main(args: Array[String]): Unit = {
+
+    var myTuple1 = ("진기한", "김자홍")
+    println(myTuple1)
+    println(myTuple1._1)
+    println(myTuple1._2)
+    println(myTuple1.swap)
+
+    var myTuple2 = ("강림도령","해원맥","덕춘")
+    println(myTuple2)
+    println(myTuple2._3)
+    
+ }
+}
+
+```
 
 
 ## 함수형 프로그래밍
