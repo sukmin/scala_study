@@ -1191,6 +1191,111 @@ class Cafe {
 - 부수효과들을 프로그램의 외부 계층으로 밀어낼 수 있다.
 - 프로그램은 순수한 핵심부와 얇은 외부 계층으로 구분되어지게 된다.
 
+### 풀어보자
+```scala
+package io.umon.scala
+
+object Main {
+
+  def main(args: Array[String]): Unit = {
+
+    //    println(factorial(4))
+    //    println(factorialLoop(4))
+
+    //    println(fib(0))
+    //    println(fib(1))
+    //    println(fib(2))
+    //    println(fib(3))
+    //    println(fib(4))
+    //    println(fib(5))
+    //    println(fib(10000))
+
+    //    println(isSorted[Int](Array(), (x, y) => x <= y))
+    //    println(isSorted[Int](Array(1), (x, y) => x <= y))
+    //    println(isSorted[Int](Array(1, 2, 3, 4, 5), (x, y) => x <= y))
+    //    println(isSorted[Int](Array(1, 999999999, 3, 4, 5), (x, y) => x <= y))
+
+  }
+
+  def factorialLoop(n: Int): Int = {
+    var acc = 1
+    for (x <- 1 to n) {
+      acc = acc * x
+    }
+
+    acc
+  }
+
+  def factorial(n: Int): Int = {
+
+    // go나 loop라는 이름으로 재귀적인 보조함수를 만든다.
+    @annotation.tailrec
+    def loop(n: Int, acc: Int): Int = {
+      if (n <= 0) {
+        acc
+      } else {
+        // 꼬리재귀를 이용하면 루프를 사용했을때와 마찬가지로 컴파일해준다.
+        loop(n - 1, n * acc)
+      }
+    }
+
+    loop(n, 1)
+  }
+
+  //https://github.com/fpinscala/fpinscala/blob/5b0115a6ad7c6c8f233c96b0b9082bf6089390d3/answerkey/gettingstarted/01.answer.scala
+  // n번째 피보나치수를 구하여라. 반드시 꼬리재귀를 사용하라. 10분
+  // 피보나치수는 0, 1, 1, 2, 3, 5
+  def fib(n: Int): Int = {
+
+    1
+  }
+
+
+  //  def fib(n: Int): Int = {
+  //
+  //
+  //    @annotation.tailrec
+  //    def loop(a: Int, b: Int, n: Int): Int = {
+  //      if (n == 0)
+  //        a
+  //      else
+  //        loop(b, a + b, n - 1)
+  //    }
+  //
+  //    loop(0, 1, n)
+  //  }
+
+
+  //https://github.com/fpinscala/fpinscala/blob/5b0115a6ad7c6c8f233c96b0b9082bf6089390d3/answerkey/gettingstarted/02.answer.scala
+  // Array[A]가 주어진 비교 함수에 의거해서 정렬되어 있는지 점검하는 isSorted 함수를 구현하라.
+  def isSorted[A](as: Array[A], ordered: (A, A) => Boolean): Boolean = {
+
+
+    true
+  }
+
+  //  def isSorted[A](as: Array[A], ordered: (A, A) => Boolean): Boolean = {
+  //    @annotation.tailrec
+  //    def loop(as: Array[A], n: Int, f: (A, A) => Boolean): Boolean = {
+  //      if ((as.length - 1) <= n) {
+  //        true
+  //      } else if (!f(as(n), as(n + 1))) {
+  //        false
+  //      } else {
+  //        loop(as, n + 1, f)
+  //      }
+  //    }
+  //
+  //    loop(as, 0, ordered)
+  //  }
+
+
+}
+
+```
+
+
+
 ## 참고
 https://en.wikipedia.org/wiki/Martin_Odersky
 
