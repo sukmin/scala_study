@@ -1192,6 +1192,49 @@ object Main {
 
 ```
 
+### 7단계 : 약분해보기(private 사용)
+```scala
+  // 자바와의 차이점. 장황하게 생성자를 만들 필요도 없고 멤버를 만들 필요도 없다. 내부에서 n과 d는 사용 가능. 간단한 클래스 만들때 매우 유용
+  class Rational(n: Int, d: Int) {
+
+    //require 메소드는 인자로 boolean 하나를 받고 참이 아니면 IllegalArgumentException 발생
+    require(d != 0)
+
+    // 외부에 노출하기 싫으니까 private
+    private val g = gcd(n.abs, d.abs)
+
+    val numer: Int = n / g
+    val denom: Int = d / g
+
+    // 보조생성자. 보조생성자는 항상 this(...)로 시작. 모든 보조생성자는 결국 주 생성자로 통한다.
+    def this(n: Int) = this(n, 1)
+
+    // toString 오버라이드
+    override def toString: String = n + "/" + d
+
+    def add(another: Rational): Rational =
+      new Rational((numer * another.denom) + (another.numer * denom), denom * another.denom)
+
+    // this를 생략해도 되지만..
+    def lessThan(another: Rational): Boolean =
+      this.numer * another.denom < another.numer * this.denom
+
+    // this를 반드시 써야하는 경우도 있다
+    def max(another: Rational): Rational =
+      if (this.lessThan(another))
+        another
+      else
+        this
+
+    // 최대공약수
+    private def gcd(a: Int, b: Int): Int =
+      if (b == 0)
+        a
+      else
+        gcd(b, a % b)
+  }
+```
+
 ## 함수형 프로그래밍
 
 ### 부수효과
