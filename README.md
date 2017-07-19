@@ -1060,11 +1060,9 @@ object Main {
 
 ```
 
-## 함수형 객체
+## 함수형 객체(분수 클래스 만들어보기)
 
-### 분수 클래스 만들어보기
-
-#### 1단계 : 가장 간단한게 만들어보기
+### 1단계 : 가장 간단한게 만들어보기
 ```scala
 // 자바와의 차이점. 장황하게 생성자를 만들 필요도 없고 멤버를 만들 필요도 없다. 내부에서 n과 d는 사용 가능. 간단한 클래스 만들때 매우 유용
   class Rational(n: Int, d: Int)
@@ -1459,6 +1457,81 @@ object Main {
 }
 
 ```
+
+### 11단계 : 객체의 동일성 부여
+
+#### equals 구현시 일관성이 없는 동작을 야기하는 네 가지 경우
+##### equals 선언 시 잘못된 시그니처를 사용
+```scala
+package io.umon.scala
+
+import scala.collection.mutable
+
+
+class Point(val x: Int, val y: Int) {
+  def equals(another: Point): Boolean =
+    this.x == another.x && this.y == another.y
+
+  // == 잘못된 ==의 오버로드
+  //def ==(another: Point): Boolean = {}
+
+  /*
+  override def equals(obj: scala.Any): Boolean = obj match {
+    case obj: Point => this.x == obj.x && this.y == obj.y
+    case _ => false
+  }
+  */
+}
+
+object Main {
+
+  def main(args: Array[String]): Unit = {
+
+    val p1 = new Point(1, 2)
+    val p2 = new Point(1, 2)
+    println(p1 equals p2)
+
+    val hashSet = mutable.HashSet(p1);
+    println(hashSet.contains(p2))
+
+  }
+
+}
+```
+##### equals를 변경하면서 hashcode는 그대로 놔둔 경우
+```scala
+package io.umon.scala
+
+import scala.collection.mutable
+
+
+class Point(val x: Int, val y: Int) {
+  
+  override def hashCode(): Int = (x,y).##
+
+  override def equals(obj: scala.Any): Boolean = obj match {
+    case obj: Point => this.x == obj.x && this.y == obj.y
+    case _ => false
+  }
+}
+
+object Main {
+
+  def main(args: Array[String]): Unit = {
+
+    val p1 = new Point(1, 2)
+    val p2 = new Point(1, 2)
+    println(p1 equals p2)
+
+    val hashSet = mutable.HashSet(p1);
+    println(hashSet.contains(p2))
+
+  }
+
+}
+```
+##### equals를 변경 가능한 필드의 값을 기준으로 정의한 경우
+##### equlas를 동치 관계로 정의하지 않은 경우
 
 ## 함수형 프로그래밍
 
