@@ -1531,6 +1531,47 @@ object Main {
 }
 ```
 ##### equals를 변경 가능한 필드의 값을 기준으로 정의한 경우
+```scala
+package io.umon.scala
+
+import scala.collection.mutable
+
+
+class Point(var x: Int, var y: Int) {
+
+  override def hashCode(): Int = (x,y).##
+
+  override def equals(obj: scala.Any): Boolean = obj match {
+    case obj: Point => this.x == obj.x && this.y == obj.y
+    case _ => false
+  }
+}
+
+object Main {
+
+  def main(args: Array[String]): Unit = {
+
+    val p1 = new Point(1, 2)
+
+    val hashSet = mutable.HashSet(p1);
+    println(hashSet.contains(p1))
+    println(hashSet.iterator.contains(p1))
+
+    p1.x = p1.x + 1
+    println(hashSet.contains(p1))
+    println(hashSet.iterator.contains(p1))
+
+  }
+
+}
+
+
+//val x = new Rational(2, 3)
+//val y = new Rational(2, 3)
+//println(x == y)
+//println(x eq y)
+
+```
 ##### equlas를 동치 관계로 정의하지 않은 경우
 
 ## 함수형 프로그래밍
