@@ -1060,6 +1060,74 @@ object Main {
 
 ```
 
+## 함수형 객체
+
+### 분수 클래스 만들어보기
+
+#### 1단계 : 가장 간단한게 만들어보기
+```scala
+// 자바와의 차이점. 장황하게 생성자를 만들 필요도 없고 멤버를 만들 필요도 없다. 내부에서 n과 d는 사용 가능. 간단한 클래스 만들때 매우 유용
+  class Rational(n: Int, d: Int)
+```
+
+### 2단계 : toString 오버라이드 해보기
+```scala
+  // 자바와의 차이점. 장황하게 생성자를 만들 필요도 없고 멤버를 만들 필요도 없다. 내부에서 n과 d는 사용 가능. 간단한 클래스 만들때 매우 유용
+  class Rational(n: Int, d: Int) {
+    // toString 오버라이드
+    override def toString: String = n + "/" + d
+  }
+```
+
+### 3단계 : 분모가 0인 경우 방어하기
+```scala
+  // 자바와의 차이점. 장황하게 생성자를 만들 필요도 없고 멤버를 만들 필요도 없다. 내부에서 n과 d는 사용 가능. 간단한 클래스 만들때 매우 유용
+  class Rational(n: Int, d: Int) {
+
+    //require 메소드는 인자로 boolean 하나를 받고 참이 아니면 IllegalArgumentException 발생
+    require( d != 0)
+
+    // toString 오버라이드
+    override def toString: String = n + "/" + d
+  }
+```
+- 스칼라는 기본적으로 java.lang과 scala패키지의 멤버를 암시적으로 임포트.
+- scala 패키지의 Predef라는 싱글톤 객체의 멤버도 항상 임포트하는데, 유용한 것들이 많음. println 등등
+
+### 4단계 : 덧셈 만들어보기
+```scala
+  // 자바와의 차이점. 장황하게 생성자를 만들 필요도 없고 멤버를 만들 필요도 없다. 내부에서 n과 d는 사용 가능. 간단한 클래스 만들때 매우 유용
+  class Rational(n: Int, d: Int) {
+
+    //require 메소드는 인자로 boolean 하나를 받고 참이 아니면 IllegalArgumentException 발생
+    require(d != 0)
+
+    // toString 오버라이드
+    override def toString: String = n + "/" + d
+
+    def add(another: Rational): Rational =
+      new Rational((n * another.d) + (another.n * d), d * another.d)
+  }
+```
+
+```scala
+  // 자바와의 차이점. 장황하게 생성자를 만들 필요도 없고 멤버를 만들 필요도 없다. 내부에서 n과 d는 사용 가능. 간단한 클래스 만들때 매우 유용
+  class Rational(n: Int, d: Int) {
+
+    //require 메소드는 인자로 boolean 하나를 받고 참이 아니면 IllegalArgumentException 발생
+    require(d != 0)
+
+    val numer : Int = n
+    val denom: Int = d
+
+    // toString 오버라이드
+    override def toString: String = n + "/" + d
+
+    def add(another: Rational): Rational =
+      new Rational((numer * another.denom) + (another.numer * denom), denom * another.denom)
+  }
+```
+
 ## 함수형 프로그래밍
 
 ### 부수효과
