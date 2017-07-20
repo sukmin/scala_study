@@ -860,6 +860,18 @@ object Main {
     println(list8)
     println(list8.distinct)
 
+    println("head")
+    println(list2.head)
+
+    println("tail")
+    println(list2.tail)
+
+    println("last")
+    println(list2.last)
+
+    println("init")
+    println(list2.init)
+
   }
 }
 
