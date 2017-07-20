@@ -1717,6 +1717,7 @@ class Coffee {
 class CreditCard {
   def charge(price: Int): Unit = {
     //TODO 뭔가 함
+    // 네크워크를 통해 신용카드 회사와 접촉해 거래를 승인하고, 대금을 청구하고, 거래 기록을 영구적으로 기록하는 역할 등을 한다.
   }
 }
 
@@ -1726,7 +1727,6 @@ class Cafe {
     val cup = new Coffee()
 
     // 이 부분이 바로 부수효과!
-    // 네크워크를 통해 신용카드 회사와 접촉해 거래를 승인하고, 대금을 청구하고, 거래 기록을 영구적으로 기록하는 역할 등을 한다.
     // 부수효과가 있기 때문에 테스트도 어렵다.
     cc.charge(cup.price)
 
