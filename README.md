@@ -1139,7 +1139,7 @@ object Main {
     val denom: Int = d
 
     // toString 오버라이드
-    override def toString: String = n + "/" + d
+    override def toString: String = numer + "/" + denom
 
     def add(another: Rational): Rational =
       new Rational((numer * another.denom) + (another.numer * denom), denom * another.denom)
@@ -1158,7 +1158,7 @@ object Main {
     val denom: Int = d
 
     // toString 오버라이드
-    override def toString: String = n + "/" + d
+    override def toString: String = numer + "/" + denom
 
     def add(another: Rational): Rational =
       new Rational((numer * another.denom) + (another.numer * denom), denom * another.denom)
@@ -1191,7 +1191,7 @@ object Main {
     def this(n: Int) = this(n, 1)
 
     // toString 오버라이드
-    override def toString: String = n + "/" + d
+    override def toString: String = numer + "/" + denom
 
     def add(another: Rational): Rational =
       new Rational((numer * another.denom) + (another.numer * denom), denom * another.denom)
@@ -1228,7 +1228,7 @@ object Main {
     def this(n: Int) = this(n, 1)
 
     // toString 오버라이드
-    override def toString: String = n + "/" + d
+    override def toString: String = numer + "/" + denom
 
     def add(another: Rational): Rational =
       new Rational((numer * another.denom) + (another.numer * denom), denom * another.denom)
@@ -1275,7 +1275,7 @@ object Main {
     def this(n: Int) = this(n, 1)
 
     // toString 오버라이드
-    override def toString: String = n + "/" + d
+    override def toString: String = numer + "/" + denom
 
     def +(another: Rational): Rational =
       new Rational((numer * another.denom) + (another.numer * denom), denom * another.denom)
@@ -1340,7 +1340,7 @@ object Main {
     def this(n: Int) = this(n, 1)
 
     // toString 오버라이드
-    override def toString: String = n + "/" + d
+    override def toString: String = numer + "/" + denom
 
     def +(another: Rational): Rational =
       new Rational((numer * another.denom) + (another.numer * denom), denom * another.denom)
@@ -1419,7 +1419,7 @@ object Main {
     def this(n: Int) = this(n, 1)
 
     // toString 오버라이드
-    override def toString: String = n + "/" + d
+    override def toString: String = numer + "/" + denom
 
     def +(another: Rational): Rational =
       new Rational((numer * another.denom) + (another.numer * denom), denom * another.denom)
@@ -1621,7 +1621,7 @@ object Main {
     def this(n: Int) = this(n, 1)
 
     // toString 오버라이드
-    override def toString: String = n + "/" + d
+    override def toString: String = numer + "/" + denom
 
     def +(another: Rational): Rational =
       new Rational((numer * another.denom) + (another.numer * denom), denom * another.denom)
