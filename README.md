@@ -1986,6 +1986,8 @@ scalatra/scalatra-sbt.g8 (Basic Scalatra template using SBT 0.13.x.)
 
 
 ### 디렉토리 구조
+- 메이븐과 동일
+
 ```bash
 src/
   main/
@@ -2004,7 +2006,27 @@ src/
        <test Java sources>
 ```
 
-### 
+### 빌드정의파일( build.sbt )
+
+### 빌드지원파일( ./project )
+
+### 실행
+
+#### shell mode
+```bash
+localhost:myhelloworld naver$ sbt
+[info] Loading project definition from /Users/naver/test/sbt/myhelloworld/project
+[info] Updating {file:/Users/naver/test/sbt/myhelloworld/project/}myhelloworld-build...
+[info] Resolving org.fusesource.jansi#jansi;1.4 ...
+[info] Done updating.
+[info] Compiling 1 Scala source to /Users/naver/test/sbt/myhelloworld/project/target/scala-2.10/sbt-0.13/classes...
+[info] 'compiler-interface' not yet compiled for Scala 2.10.6. Compiling...
+[info]   Compilation completed in 13.834 s
+[info] Set current project to Hello (in build file:/Users/naver/test/sbt/myhelloworld/)
+> compile
+```
+
+#### batch mode
 
 ## 참고
 https://en.wikipedia.org/wiki/Martin_Odersky
