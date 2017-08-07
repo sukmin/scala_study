@@ -1940,6 +1940,17 @@ object Main {
 
 ```bash
 localhost:sbt naver$ sbt new scala/scala-seed.g8
+WARN: No sbt.version set in project/build.properties, base directory: /Users/naver/test/sbt
+[warn] Executing in batch mode.
+[warn]   For better performance, hit [ENTER] to switch to interactive mode, or
+[warn]   consider launching sbt without any commands, or explicitly passing 'shell'
+[info] Set current project to sbt (in build file:/Users/naver/test/sbt/)
+
+A minimal Scala project.
+
+name [Scala Seed Project]:  MyHelloWorld
+
+Template applied in ./myhelloworld
 ```
 
 메이븐이 다양한 아키타입이 있는 것처럼 SBT도 템플릿이 있다. ( http://www.scala-sbt.org/1.0/docs/sbt-new-and-Templates.html )
@@ -1973,6 +1984,25 @@ unfiltered/unfiltered.g8 (Unfiltered application)
 
 scalatra/scalatra-sbt.g8 (Basic Scalatra template using SBT 0.13.x.)
 
+
+### 디렉토리 구조
+```bash
+src/
+  main/
+    resources/
+       <files to include in main jar here>
+    scala/
+       <main Scala sources>
+    java/
+       <main Java sources>
+  test/
+    resources
+       <files to include in test jar here>
+    scala/
+       <test Scala sources>
+    java/
+       <test Java sources>
+```
 
 ### 
 
