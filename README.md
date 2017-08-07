@@ -1943,21 +1943,36 @@ localhost:sbt naver$ sbt new scala/scala-seed.g8
 ```
 
 메이븐이 다양한 아키타입이 있는 것처럼 SBT도 템플릿이 있다. ( http://www.scala-sbt.org/1.0/docs/sbt-new-and-Templates.html )
+
 foundweekends/giter8.g8 (A template for Giter8 templates)
+
 scala/scala-seed.g8 (Seed template for Scala)
+
 scala/hello-world.g8 (A template to demonstrate a minimal Scala application)
+
 akka/akka-scala-seed.g8 (A minimal seed template for an Akka with Scala build )
+
 akka/akka-java-seed.g8 (A minimal seed template for an Akka in Java )
+
 akka/hello-akka.g8 (Simple Akka application)
+
 playframework/play-scala-seed.g8 (Play Scala Seed Template)
+
 playframework/play-java-seed.g8 (Play Java Seed template)
+
 lagom/lagom-scala.g8 (A Lagom Scala seed template for sbt)
+
 lagom/lagom-java.g8 (A Lagom Java seed template for sbt)
 scala-native/scala-native.g8 (Scala Native)
+
 scala-native/sbt-crossproject.g8 (sbt-crosspoject)
+
 http4s/http4s.g8 (http4s services)
+
 unfiltered/unfiltered.g8 (Unfiltered application)
+
 scalatra/scalatra-sbt.g8 (Basic Scalatra template using SBT 0.13.x.)
+
 
 ### 
 
