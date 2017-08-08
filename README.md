@@ -2030,6 +2030,21 @@ localhost:myhelloworld naver$ sbt
 - 우리가 잘 아는 maven과 유사하다.
 - clean, compile, pacakge 등등( http://www.scala-sbt.org/0.13/docs/Running.html )
 
+build.sbt
+```scala
+name := "sample"
+
+organization := "io.umon.sample"
+
+scalaVersion := "2.12.2"
+
+version := "0.1.0-SNAPSHOT"
+
+libraryDependencies += "org.apache.commons" % "commons-lang3" % "3.1"
+libraryDependencies += "com.google.code.gson" % "gson" % "2.8.1"
+
+```
+
 소스
 ```scala
 package io.umon.sample
@@ -2049,21 +2064,6 @@ object Main {
   }
 
 }
-
-```
-
-build.sbt
-```scala
-name := "sample"
-
-organization := "io.umon.sample"
-
-scalaVersion := "2.12.2"
-
-version := "0.1.0-SNAPSHOT"
-
-libraryDependencies += "org.apache.commons" % "commons-lang3" % "3.1"
-libraryDependencies += "com.google.code.gson" % "gson" % "2.8.1"
 
 ```
 
