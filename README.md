@@ -2030,6 +2030,42 @@ localhost:myhelloworld naver$ sbt
 - 우리가 잘 아는 maven과 유사하다.
 - clean, compile, pacakge 등등( http://www.scala-sbt.org/0.13/docs/Running.html )
 
+소스
+```scala
+package io.umon.sample
+
+import com.google.gson.Gson
+import org.apache.commons.lang3.StringUtils
+
+case class Person(age: Int, name: String, job: String)
+
+object Main {
+
+  def main(args: Array[String]): Unit = {
+    println("ok")
+    println(StringUtils.equals("ok", "OK"))
+    val gson = new Gson()
+    println(gson.toJson(Person(33, "권석민", "무직")))
+  }
+
+}
+
+```
+
+build.sbt
+```scala
+name := "sample"
+
+organization := "io.umon.sample"
+
+scalaVersion := "2.12.2"
+
+version := "0.1.0-SNAPSHOT"
+
+libraryDependencies += "org.apache.commons" % "commons-lang3" % "3.1"
+libraryDependencies += "com.google.code.gson" % "gson" % "2.8.1"
+
+```
 
 ## 참고
 https://en.wikipedia.org/wiki/Martin_Odersky
