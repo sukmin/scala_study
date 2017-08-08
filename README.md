@@ -2027,6 +2027,9 @@ localhost:myhelloworld naver$ sbt
 ```
 
 #### batch mode
+- 우리가 잘 아는 maven과 유사하다.
+- clean, compile, pacakge 등등( http://www.scala-sbt.org/0.13/docs/Running.html )
+
 
 ## 참고
 https://en.wikipedia.org/wiki/Martin_Odersky
