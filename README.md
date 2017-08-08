@@ -2067,6 +2067,11 @@ object Main {
 
 ```
 
+
+### 실습1. 영문 텍스트 파일을 읽고 각 단어들이 나온 횟수를 구하라(word count)
+
+### 실습2. 네이버API를 이용해 기계번역하는 프로그램을 작성하라.
+
 ## 참고
 https://en.wikipedia.org/wiki/Martin_Odersky
 
