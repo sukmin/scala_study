@@ -2,3 +2,6 @@ checkstyle-idea.xml
 .idea
 out
 *.iml
+project/project/target
+project/target
+target
