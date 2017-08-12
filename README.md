@@ -2069,6 +2069,33 @@ object Main {
 
 
 ### 실습1. 영문 텍스트 파일을 읽고 각 단어들이 나온 횟수를 구하라(word count)
+```scala
+package io.umon.sample
+
+import scala.collection.mutable
+import scala.io.Source
+
+case class Person(age: Int, name: String, job: String)
+
+object Main {
+
+  def main(args: Array[String]): Unit = {
+
+    require(args.length == 1)
+
+    val counts = mutable.Map.empty[String, Int]
+
+    for (line <- Source.fromFile(args(0)).getLines(); word <- line.split(" ")) {
+      val oldCount = if (counts.contains(word)) counts(word) else 0
+      counts += (word -> (oldCount + 1))
+    }
+
+    println(counts)
+
+  }
+
+}
+```
 
 ### 실습2. 네이버API를 이용해 기계번역하는 프로그램을 작성하라.
 
